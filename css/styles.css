@@ -1,0 +1,345 @@
+/* ================================= 
+  Base Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+/* out later 
+div, li { 
+  border: 1px solid black;
+  }*/
+
+
+body {
+	line-height: 1.6;
+	color: #3a3a3a;
+  font-family: Open Sans, Helvetica, Sans-Serif;
+  font-size: 1.25em;
+}
+
+p {
+	font-size: 1em;
+	margin-bottom: 1.5em;
+  text-align: center;
+  font: black;
+}
+
+h2,
+h3,
+a {
+	color: black;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .9em;
+}
+
+h3 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer {
+  background-color: #f7f7f7;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Header Name ----*/
+
+.SName {
+	font-size: 1.65em;
+  display: block;
+  text-align: center;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+}
+
+.bio {
+  background-color: #f7f7f7;
+  padding: 2em;
+}
+/* ---- Navigation ---- */
+
+
+.main-nav {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.main-nav ul {
+  margin: 0 10px;
+  list-style-position: outside;
+}
+
+.SName {
+  text-align: center;
+}
+.nav li {
+	text-align: center;
+  margin: .5em;
+  background-color: white;
+}
+
+
+/* ---- About Section ---- */
+
+.primary,
+.secondary {
+  width: 100%;
+}
+
+
+/* ---- Portfolio Gallery ---- */
+.gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery li a p {
+  margin: 0;
+  padding: 5%;
+  font-size: 0.75em;
+  color: #949596;
+}
+
+/* ---- Contact ----*/
+
+.Contact {
+  padding: 1em 1em;
+  background-color: #f7f7f7;
+}
+
+/* ---- Footer ---- */
+
+.footername {
+  text-align: left;
+  font-size: .95em;
+  font-weight: 400;
+  padding-left: 10px;
+}
+
+.BacktoTop {
+  text-align: right;
+  padding-right: 10px;
+  font-size: .95em;
+}
+
+.footername, .BacktoTop {
+  float: left;
+  width: 50%;
+  display: inline-block;
+}
+
+
+.main-footer {
+  border-top: 1px solid #e8e8e8;
+  padding: 0 1em;
+}
+/* ---- Layout Containers ---- */
+
+.container {
+	padding-left: 1em;
+	padding-right: 1em;
+  margin: 0 auto;
+}
+
+.main-header {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+}
+
+.main-footer {
+	padding: 2em 0;
+  display: block;
+  height: 20px;
+  clear: both;
+}
+
+.footnav {
+  display: none;
+}
+
+
+/******************************
+Flexbox Layout
+*******************************/
+
+.header, .nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  justify-content: space-between;
+}
+
+.nav {
+  flex: 1;
+  justify-content: space-around;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media screen and (min-width: 768px) {
+  
+  .nav li {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+  }
+  .nav {
+    flex-direction: row;
+    
+  }
+
+  .container,
+  .main-header,
+	.main-nav,
+  .row {
+		display: flex;
+	}
+
+  .primary {
+    order: -1;
+  }
+  
+	.main-header {
+		flex-direction: column;
+		align-items: center;
+	}
+  
+
+  .nav li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 400;
+    list-style-type: none;
+    padding: 20px 20px;
+  }
+  
+  .title {
+    display: block;
+  }
+  
+	.navname {
+		width: 240px;
+    text-align: left;
+    margin-left: 5px;
+	}
+
+  .col {
+    display: inline-block;
+    width: 50%;
+    padding-left: 1em;
+    padding-right: 1em;
+    vertical-align: top;
+  
+  }
+  
+  #portfolio {
+   margin-top: 3em;   
+  }
+
+  .primary {
+    width: 50%;
+  }
+
+  .secondary {
+    width: 50%;
+  }
+
+  .gallery {
+    width: 100%;
+
+  }
+  
+  .gallery li {
+    float: left;
+    width: 43%;
+    margin: 1em;
+  }
+ 
+  
+  .Contact p {
+    padding: 0 5em;
+  }
+  
+  .BacktoTop {
+    display: none;
+  }
+  
+  .footnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0;
+  }
+  
+  .footnav li a {
+    padding: 1em;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+ 
+  .main-header {
+		flex-direction: row;
+    padding: 0 2em;
+	}
+  
+  .nav {
+    justify-content: flex-end;
+  }
+
+ 
+  .SName {
+    text-align: left;
+  }
+
+  .primary p {
+    text-align: left;
+  }
+
+  .gallery {
+    width: 100%;
+  }
+  
+  .gallery li {
+    float: left;
+    width: 30%;
+    margin: .7em;
+  }
+ 
+}
